@@ -11,6 +11,6 @@ package baitap6;
 public class ThanhToanTienMat implements IThanhToan {
       @Override
     public void ThanhToan(double soTien){
-        System.out.println("Số tiền thanh toán tiền mặt là:" + soTien);
+        System.out.println("So tien thanh toan tien mat la " + soTien);
     }
 }

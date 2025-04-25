@@ -10,4 +10,5 @@
         <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>com.mycompany.baitap6.BaiTap6</exec.mainClass>
     </properties>
+    <name>36_2251172431_DangPhuongNam_BaiTapCT6</name>
 </project>
