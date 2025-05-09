@@ -8,6 +8,15 @@ package com.mycompany.ht12;
  *
  * @author Dang Phuong Nam
  */
-public class SmtpEmailService {
-    
+public class SmtpEmailService implements IEmailService{
+    @Override
+    public boolean SendEmail(String to, String subject, String body){
+        if(!"".equals(to)){
+            System.out.println("Gui email thanh cong toi "+ to +" qua SMTP");
+            return true;
+        }else{
+            System.out.println("Dia chi email khong hop le");
+            return false;
+        }
+    }
 }

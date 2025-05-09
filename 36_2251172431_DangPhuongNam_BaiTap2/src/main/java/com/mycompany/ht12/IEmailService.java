@@ -9,5 +9,5 @@ package com.mycompany.ht12;
  * @author Dang Phuong Nam
  */
 public interface IEmailService {
-    
+    public boolean SendEmail(String to, String Subject, String body);
 }
