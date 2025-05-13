@@ -8,13 +8,15 @@ package Bai12;
  *
  * @author Dang Phuong Nam
  */
-public class SmtpEmailService {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class SmtpEmailService implements IEmailService{
+    @Override
+    public boolean SendEmail(String to, String subject, String body){
+        if(!"".equals(to)){
+            System.out.println("Gui email thanh cong toi "+ to +" qua SMTP");
+            return true;
+        }else{
+            System.out.println("Dia chi email khong hop le");
+            return false;
+        }
     }
-    
 }

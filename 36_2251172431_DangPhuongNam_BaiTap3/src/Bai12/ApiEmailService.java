@@ -8,6 +8,15 @@ package Bai12;
  *
  * @author Dang Phuong Nam
  */
-public class ApiEmailService {
-    
+public class ApiEmailService implements IEmailService{
+    @Override
+    public boolean SendEmail(String to, String subject, String body){
+        if(!"".equals(to)){
+            System.out.println("Gui email thanh cong toi "+ to +" qua API");
+            return true;
+        }else{
+            System.out.println("Dia chi email khong hop le");
+            return false;
+        }
+    }
 }

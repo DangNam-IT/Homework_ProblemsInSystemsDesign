@@ -8,6 +8,7 @@ package Bai12;
  *
  * @author Dang Phuong Nam
  */
-public class EmailServiceFactory {
-    
+public abstract class EmailServiceFactory{
+    public abstract IEmailService CreateEmailService();
 }
+

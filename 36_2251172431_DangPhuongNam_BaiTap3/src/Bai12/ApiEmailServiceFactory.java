@@ -8,6 +8,10 @@ package Bai12;
  *
  * @author Dang Phuong Nam
  */
-public class ApiEmailServiceFactory {
-    
+public class ApiEmailServiceFactory extends EmailServiceFactory{
+    @Override
+    public IEmailService CreateEmailService(){
+        return new ApiEmailService();
+    }
 }
+
