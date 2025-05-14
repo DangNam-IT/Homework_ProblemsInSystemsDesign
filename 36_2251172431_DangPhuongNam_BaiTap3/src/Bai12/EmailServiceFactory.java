@@ -10,5 +10,18 @@ package Bai12;
  */
 public abstract class EmailServiceFactory{
     public abstract IEmailService CreateEmailService();
+    public void Notify(String recipient, String message){
+        IEmailService em = CreateEmailService();
+        em.SendEmail(recipient, "Thông báo", message);
+    }
+}
+class Main{
+    public static void main(String[] args) {
+        EmailServiceFactory api = new ApiEmailServiceFactory();
+        EmailServiceFactory smtp = new SmtpEmailServiceFactory();
+        
+        smtp.Notify("user@example.com", "Chào bạn!");
+        api.Notify("user@example.com", "Chào bạn!");    
+    }
 }
 
