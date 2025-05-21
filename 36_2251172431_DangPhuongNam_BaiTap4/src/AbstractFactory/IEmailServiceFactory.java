@@ -8,7 +8,7 @@ package AbstractFactory;
  *
  * @author Dang Phuong Nam
  */
-public interface EmailServiceFactory {
+public interface IEmailServiceFactory {
     EmailSender createSender();
     EmailLogger createLogger();
 }

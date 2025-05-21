@@ -15,7 +15,7 @@ public class Client{
     public Client() {
     }
 
-    public Client(EmailServiceFactory factory) {
+    public Client(IEmailServiceFactory factory) {
         this.sender = factory.createSender();
         this.logger = factory.createLogger();
     }
@@ -26,8 +26,8 @@ public class Client{
     }
     
     public static void main(String[] args) {  
-        EmailServiceFactory factory1 = new ApiEmailFactory();
-        EmailServiceFactory factory2 = new SmtpEmailFactory();
+        IEmailServiceFactory factory1 = new ApiEmailFactory();
+        IEmailServiceFactory factory2 = new SmtpEmailFactory();
         
         
         Client ob1 = new Client(factory1);

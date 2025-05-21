@@ -8,7 +8,7 @@ package AbstractFactory;
  *
  * @author Dang Phuong Nam
  */
-public class SmtpEmailFactory implements EmailServiceFactory{
+public class SmtpEmailFactory implements IEmailServiceFactory{
 
     @Override
     public EmailSender createSender() {
