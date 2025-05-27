@@ -1,19 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 
-/**
- *
- * @author Dang Phuong Nam
- */
+import jakarta.mail.MessagingException;
+import java.time.LocalTime;
+import jakarta.activation.*;
 public class Client {
 
     /**
      * @param args the command line arguments
+     * @throws jakarta.mail.MessagingException
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws MessagingException {
+        ExternalMailSender sender = new ExternalMailSender();
+        EmailServiceAdapter emailService = new EmailServiceAdapter(sender);
+        
+        String email = "from=sender@example.com;to=receiver@example.com;subject=Hello;body=This is an email.";
+
+        emailService.schedule(email, LocalTime.now());
     }
     
 }
