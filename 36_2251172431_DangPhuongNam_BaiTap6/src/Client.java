@@ -1,7 +1,5 @@
-
 import jakarta.mail.MessagingException;
 import java.time.LocalTime;
-import jakarta.activation.*;
 public class Client {
 
     /**
@@ -10,7 +8,7 @@ public class Client {
      */
     public static void main(String[] args) throws MessagingException {
         ExternalMailSender sender = new ExternalMailSender();
-        EmailServiceAdapter emailService = new EmailServiceAdapter(sender);
+        IEmailService emailService = new EmailServiceAdapter(sender);
         
         String email = "from=sender@example.com;to=receiver@example.com;subject=Hello;body=This is an email.";
 

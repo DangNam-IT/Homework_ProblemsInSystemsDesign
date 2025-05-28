@@ -2,6 +2,8 @@ import jakarta.mail.*;
 import jakarta.mail.internet.*;
 import java.time.LocalTime;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class EmailServiceAdapter implements IEmailService {
     
@@ -45,9 +47,14 @@ public class EmailServiceAdapter implements IEmailService {
         return map;
     }
     
-    public void schedule(String email, LocalTime time) throws MessagingException{
-        MimeMessage specialEmail = convertToMimeMessage(email);
-        adaptee.scheduleSend(specialEmail, time);
+    @Override
+    public void schedule(String email, LocalTime time) {
+        try {
+            MimeMessage specialEmail = convertToMimeMessage(email);
+            adaptee.scheduleSend(specialEmail, time);
+        } catch (MessagingException ex) {
+            Logger.getLogger(EmailServiceAdapter.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     
