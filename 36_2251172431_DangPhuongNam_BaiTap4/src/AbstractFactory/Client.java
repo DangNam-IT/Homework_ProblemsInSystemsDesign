@@ -20,15 +20,14 @@ public class Client{
         this.logger = factory.createLogger();
     }
     
-    public void sendEmail(String recipient, String to, String message){
-        sender.send(recipient, to, message);
-        logger.log("Email sended to " + to + "\n" );
+    public void sendEmail(String to, String subject, String message){
+        sender.send(to, subject, message);
+        logger.log("Email sent to " + to + "\n" );
     }
     
     public static void main(String[] args) {  
         IEmailServiceFactory factory1 = new ApiEmailFactory();
         IEmailServiceFactory factory2 = new SmtpEmailFactory();
-        
         
         Client ob1 = new Client(factory1);
         Client ob2 = new Client(factory2);
