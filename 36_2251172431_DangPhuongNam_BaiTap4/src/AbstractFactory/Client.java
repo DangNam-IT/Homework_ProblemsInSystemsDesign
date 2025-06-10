@@ -35,11 +35,5 @@ public class Client{
 
         ob1.sendEmail("user1@gmail.com", "DangNam", "hello. My name is Huyen Trang");
         ob2.sendEmail("user1@gmail.com", "HuyenTrang", "hello. My name is Nam Mit");
-        
-//        factory1.createSender();
-//        factory1.createLogger();
-//        factory2.createSender();
-//        factory2.createLogger();
-        
     }
 }
